@@ -1,5 +1,9 @@
 // cambia direttamente l'h1
-document.getElementById("h1").innerHTML = "Your new e-commerce";
+// document.getElementById("h1").innerHTML = "Your new e-commerce";
+function changeH1(){
+    document.getElementById("h1").innerHTML = "Your new e-commerce";
+}
+changeH1();
 
 // cambio il background 
 document.body.style.backgroundColor = "lightgray";
