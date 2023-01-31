@@ -6,7 +6,11 @@ function changeH1(){
 changeH1();
 
 // cambio il background 
-document.body.style.backgroundColor = "lightgray";
+// document.body.style.backgroundColor = "lightgray";
+function changeBackgroundColor(){
+    document.body.style.backgroundColor = "lightgray";
+}
+changeBackgroundColor();
 
 // funzione per cambiare indirizzo
 
