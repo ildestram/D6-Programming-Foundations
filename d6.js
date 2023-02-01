@@ -74,3 +74,26 @@ document.addEventListener("click", (event) => {
 
 
 // Funzione per cambiare il colore del prezzo di ogni prodotto in uno differente, ogni volta che viene invocata
+// function changeRandomColor(){
+//     // let randomColor = "#" + Math.floor((Math.random() * 16777215).toString(16));
+//     let randomColor = Math.floor(Math.random() * 255);
+//     let link = document.getElementById("first-price");
+//     link.style.color = randomColor;
+// }
+// changeRandomColor();
+// window.onload = function random(){
+//     let price = document.getElementById("first-price");
+//     let generateColor = new Array("green", "red", "blue");
+//     let randomColor = generateColor[Math.floor(generateColor.length * Math.random())];
+
+//     for(let i = 0; i < price.length; i++){
+//         price[i].style.color = randomColor;
+//     }
+// }
+// Sono riuscita a creare un evento che cambi ad ogni mousover il colore al prezzo, fa riferimento però solo al primo prezzo, perchè ho utilizzato l'id
+let color = ["#0000FF", "#A52A2A", "#ffdc40"];
+document.getElementById("first-price").addEventListener("mouseover", function(){
+    let randomColor = color[Math.floor(Math.random() * color.length)];
+    let title = document.getElementById("first-price");
+    title.style.color = randomColor;
+})
