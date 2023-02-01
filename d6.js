@@ -12,30 +12,65 @@ function changeBackgroundColor(){
 }
 changeBackgroundColor();
 
-// funzione per cambiare indirizzo
+// funzione per cambiare indirizzo (address bar) 
+// HO LASCIATO LA FUNZIONE SOTTO FORMA DI COMMENTO, PERCHE' NEL MOMENTO IN CUI VADO A FARE IL RELOAD DELLA PAGINA, LA VECCHIA PAGINA NON LA TROVA PIU'. PUSHSTATE() E' UN METODO CHE SI USA CON LE API
+// function changeAddressBar(){
+//     window.history.pushState("object or string", "Title", "/new-url");
+// }
+// changeAddressBar();
 
-// funzione per aggiungere una classe css ad ogni link amazon della tabella
+// Funzione per aggiungere una classe css ad ogni link amazon della tabella
+// Inizialmente ho provato ad utilizzare il getElementsByTagName, ma la console mi dava errore e anche dopo aver cercato su internet non ne sono riuscita a venire a capo.
+// Quindi ho optato facendo più funzioni con id diversi e utilizzando il getElementById, sicuramente non è il livello ottimale (ne sono consapevole), ma era l'unico modo in questo momento con cui mi veniva fuori il risultato richiesto dall'esercizio
 function addClass(){
-    let add = document.getElementsByTagName("a");
-    add.classList.add("my-links");
-    // nel caso in cui volessi rimuovere una classe 
-    // add.classList.remove("my-links");
+    let element = document.getElementById("my-link");
+    element.classList.add("change-css-javascript");
 }
+addClass();
 
-// funzione per aggiungere/togliere una classe CSS alle immagini
-// In questo modo vado a rendere l'immagine invisibile
-document.getElementsByTagName("img").onclick = function(){
-    document.getElementsByClassName("img").style.visibility = "hidden"
+function addClassSecond(){
+    let second = document.getElementById("second-link");
+    second.classList.add("change-css-javascript");
 }
+addClassSecond();
 
-// Nel caso in cui volessi aggiungere o rimuovere l'invisibilità di una immagine tramite l'aggiunta di una classe, dovrei utillizare classList
-function addAndRemoveClass(){
-    let agg = document.getElementsByClassName("img");
-    agg.classList.add("visible-class");
-
-    let remo = document.getElementsByClassName("img");
-    agg.classList.remove("hidden-class");
+function addClassThird(){
+    let second = document.getElementById("third-link");
+    second.classList.add("change-css-javascript");
 }
+addClassThird();
+
+function addClassFourth(){
+    let second = document.getElementById("fourth-link");
+    second.classList.add("change-css-javascript");
+}
+addClassFourth();
+
+function addClassFifth(){
+    let second = document.getElementById("fifth-link");
+    second.classList.add("change-css-javascript");
+}
+addClassFifth();
 
 
-// funzione per cambiare il colore del prezzo di ogni prodotto in uno differente, ogni volta che viene invocata
+
+
+
+// Funzione per modificare la visibilità di una immagine
+// In questo caso, la seconda immagine partendo da sinistra non si vede, perchè ho cambiato la visibilità in hidden tramite javascript
+
+// function showImage(){
+//     let img = document.getElementById("my-image");
+//     img.style.visibility = "hidden";
+// }
+// showImage();
+// Ho trovato un ulteriore modo:
+/* In questo caso lavoro con gli eventi, nel momento in cui clicco (click, è un evento) sulla seconda immagine, questa sparisce
+*/
+document.addEventListener("click", (event) => {
+    let img = document.getElementById("my-image");
+    img.style.visibility ="hidden";
+})
+
+
+// Funzione per cambiare il colore del prezzo di ogni prodotto in uno differente, ogni volta che viene invocata
